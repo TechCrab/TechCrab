@@ -1,0 +1,47 @@
+
+<div class="dash">
+  <div class="dash-logo">
+    <img src="../../assets/Sign-In-img/dash logo.png" alt="">
+    <hr>
+  </div>
+  <p>Provider</p>
+</div>
+<div class="main">
+  <div class="left-side">
+    <img class="vector" src="../../assets/Sign-In-img/Vector.png" alt="">
+    <img class="char" src="../../assets/Sign-In-img/Character.png" alt="">
+  </div>
+  <div class="right-side">
+    <div class="signin-container">
+      <h1> SIGN IN</h1>
+      <div class="form ">
+        <form action="" [formGroup]="signin" (ngSubmit)="Submit()">
+          <div class="total-input">
+            <div class="e-mail input">
+              <label for="">Email ID </label>
+              <input formControlName="email" type="email" name="email" id="email" >
+            </div>
+            <span *ngIf="signin.controls['email'].dirty && !signin.controls['email'].valid" class="err-msg">Invalid E-mail Id !</span>
+            <div class="password input">
+              <label for="">Password</label>
+              <input formControlName="password" type="password" maxlength="10" name="password" id="" >
+            </div>
+            <span *ngIf="signin.controls['password'].dirty && !signin.controls['password'].valid" class="err-msg-pass">Enter minimum Five Charactors to a 
+              password !</span>
+          </div>
+          <div class="btn sign-btn">
+            <a target="_blank" href="https://www.google.com"><button class="gle-btn"><span>Sign in With </span><img
+                  class="google" src="../../assets/Sign-In-img/Google__G__Logo 1.png" alt=""></button></a>
+            <button [disabled]="signin.invalid" class="signin">Sign In</button>
+          </div>
+        </form>
+      </div>
+      <div class="sign-up">
+        <p class="sign-p">Don't have an account ?<strong><a target="_blank" href="https://www.google.com">Sign
+              Up</a></strong></p>
+      </div>
+    
+    </div>
+  </div>
+ 
+</div>

@@ -1,0 +1,22 @@
+<img class="img-1" src="../../assets/job-list-img/rafiki.png" alt="loading...">
+
+<table>
+  <thead>
+    <tr>
+      <th>JOB_ID</th>
+      <th>Job_Title</th>
+      <th>Location</th>
+      <th>Status</th>
+      <th class="th"><span>Date_Posted</span> <img (click)="!change ? sortMeAsc() : sortMeDsc();" src="../../assets/job-list-img/sort_svgrepo.com.png"alt=""> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let value of array"  (click)="onClick(value)">
+<td >{{value.JOB_ID}}</td>
+<td>{{value.Job_Title}}</td>
+<td>{{value.Location}}</td>
+<td [ngClass]="value.Status == 'active'? 'active': 'closed'"  >{{value.Status}}</td>
+<td>{{value. Date_Posted }}</td>     
+    </tr>
+  </tbody>
+</table>

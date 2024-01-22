@@ -1,0 +1,86 @@
+
+
+<div class="form-container" [style.display]="hide? 'block' : 'none' ">
+  <div class="filter">
+    <span>Filters</span>
+    <img class="exit" (click)="onClick()" src="../../assets/job-list-img/close_svgrepo.com.png" alt="">
+  </div>
+  <form [formGroup]="form" (ngSubmit)="Submit()">
+    <div class="input">
+      <div class="input-value">
+        <label for="title">job Title(s)</label>
+        <input pattern="[a-zA-Z][a-zA-Z ]+" minlength="5"
+        maxlength="20" formControlName="title" type="text" >
+        <div class="err-msg" *ngIf="form.controls['title'].dirty && !form.controls['title'].valid">
+          * Enter Only Alphabets *
+        </div>
+      </div>
+      <!-- -->
+      <div class="input-value">
+        <label for="location">Location</label>
+        <input  pattern="[a-zA-Z][a-zA-Z ]+"  minlength="3"
+        maxlength="20" formControlName="location" type="text" class="imgg">
+        <div class="err-msg" *ngIf="form.controls['location'].dirty && !form.controls['location'].valid">
+          * Enter Only Alphabets *
+        </div>
+      </div>
+      <!--  -->
+      
+     <div class="input-value ">
+      <label for="">status</label>
+      <mat-select formControlName="status" class=" mat">
+        <mat-option *ngFor="let item of status" [value]="item" >{{item}} </mat-option>
+      </mat-select>
+      <div class="err-msg" *ngIf="form.controls['status'].pristine && !form.controls['status'].valid">
+        * Mandatory Choose *
+      </div>
+     </div>
+     <!--  -->
+     <div class="input-value">
+      <label for="">Date Posted</label>
+       <input formControlName="date" type="date" name="" id="">
+       <div class="err-msg" *ngIf="form.controls['date'].pristine && !form.controls['date'].valid">
+        * Enter a  date *
+      </div>
+     </div>
+     <!--  -->
+     <div class="input-value ">
+      <label for="">Experienced Required</label>
+      <mat-select formControlName="experience" class=" mat">
+        <mat-option *ngFor="let item of experience" [value]="item" >{{item}} </mat-option>
+      </mat-select>
+      <div class="err-msg" *ngIf="form.controls['experience'].pristine && !form.controls['experience'].valid">
+        * Mandatory Experienced Required *
+      </div>
+     </div>
+     <!--  -->
+     <div class="input-value">
+      <label for="">Skils Required</label>
+      <mat-select formControlName="skils" class=" mat">
+        <mat-option *ngFor="let item of skils" [value]="item" >{{item}} </mat-option>
+      </mat-select>
+      <div class="err-msg" *ngIf="form.controls['skils'].pristine && !form.controls['skils'].valid">
+        * Mandatory Skils Required  *
+      </div>
+     </div>
+     <!--  -->
+     <div class="input-value">
+      <label for="">Industry</label>
+      <input  pattern="[a-zA-Z][a-zA-Z ]+" minlength="5"
+      maxlength="25" formControlName="industry" type="text">
+      <div class="err-msg" *ngIf="form.controls['industry'].dirty && !form.controls['industry'].valid">
+        * Mandatory Skils Required  *
+      </div>
+     </div>
+    </div>
+    <div class="btn">
+      
+        <button type="reset" class="clr-btn" >Clear All</button>  
+      <button class="aply-btn" [disabled]="form.invalid" >Apply</button>
+      
+    </div>
+  </form>
+</div>
+
+
+

@@ -4,12 +4,6 @@
 
 export const environment = {
   production: false,
-  appShellConfig: {
-    debug: false,
-    networkDelay: 0
-  }
-
-  
 };
 
 /*
